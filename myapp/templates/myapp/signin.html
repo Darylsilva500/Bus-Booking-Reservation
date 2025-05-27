@@ -1,0 +1,123 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+ body, html {
+  height: 100%;
+  margin: 0;
+  background: url("{% static 'images/header.png' %}") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+  background: #e0e0e0;
+  border-radius: 20px;
+  box-shadow:
+    8px 8px 15px #bebebe,
+    -8px -8px 15px #ffffff;
+  padding: 30px 40px;
+  margin-top: 50px;
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px #ffffffcc;
+}
+
+.login-container .form-control {
+  border-radius: 12px;
+  border: none;
+  background: #e0e0e0;
+  box-shadow:
+    inset 6px 6px 8px #bebebe,
+    inset -6px -6px 8px #ffffff;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #555;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-container .form-control:focus {
+  outline: none;
+  box-shadow:
+    inset 6px 6px 8px #a3a3a3,
+    inset -6px -6px 12px #ffffff;
+  background: #d8d8d8;
+  color: #222;
+}
+
+.login-container label {
+  font-weight: 600;
+  color: #666;
+  padding-top: 7px;
+}
+
+.login-container .btn-success {
+  background: #e0e0e0;
+  color: #2f8f4e;
+  font-weight: 700;
+  border-radius: 15px;
+  border: none;
+  box-shadow:
+    5px 5px 10px #bebebe,
+    -5px -5px 10px #ffffff;
+  transition: all 0.3s ease;
+  padding: 10px 25px;
+}
+
+.login-container .btn-success:hover {
+  background: #2f8f4e;
+  color: #fff;
+  box-shadow:
+    inset 5px 5px 10px #255d3b,
+    inset -5px -5px 10px #3dc464;
+}
+
+p {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+}
+</style>
+
+<div class="container">
+    <center>
+      <h2 class="welcome-header">
+        Welcome to
+        <img src="{% static 'images/logo1.png' %}" alt="Logo" width="200" height="70" class="mr-2">
+        Bus Reservation
+      </h2>
+    </center>
+    <div class="row">
+        <div class="col-sm-6 mx-auto login-container">
+            <h2>Log in</h2>
+
+            <form action="{% url 'signin' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-2 col-form-label">Username:</label>
+                    <div class="col-10">
+                        <input name="name" class="form-control" type="text" id="example-email-input">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-2 col-form-label">Password:</label>
+                    <div class="col-10">
+                        <input name="password" class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-success float-right">Sign in</button>
+                </div>
+            </form>
+            <p>{{ error }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

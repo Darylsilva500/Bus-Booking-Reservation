@@ -1,0 +1,138 @@
+/* Overall page background and font */
+body {
+    background: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    padding: 30px;
+}
+
+/* Main headings */
+h2 {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 10px;      /* added to push down */
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Subheading */
+h3 {
+    color: #34495e;
+    margin-top: 100px;      /* increased to push down more */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Style the button that triggers the modal */
+.btn-success {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border: none;
+    font-weight: 600;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+    transition: background 0.3s ease;
+    display: block;
+    margin: 0 auto 30px auto;
+    cursor: pointer;
+}
+.btn-success:hover {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+/* Modal styles */
+.modal-content {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.3);
+    border: none;
+}
+
+/* Modal header */
+.modal-header {
+    background:blue;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 20px 25px;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* Close button styling */
+.close {
+    color: white;
+    opacity: 1;
+    font-size: 1.5rem;
+}
+.close:hover {
+    color: #e74c3c;
+    opacity: 1;
+}
+
+/* Modal body */
+.modal-body {
+    padding: 20px 25px;
+    background: #ecf0f1;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* List group items */
+.list-group-item {
+    border: none;
+    padding: 12px 0;
+    font-size: 1.05rem;
+    color: #2c3e50;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+/* Last list item no border */
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Modal footer */
+.modal-footer {
+    background: #f7f9fa;
+    border-top: none;
+    padding: 15px 25px;
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Close button in modal footer */
+.modal-footer .btn-success {
+    background: #27ae60;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(39, 174, 96, 0.4);
+    transition: background 0.3s ease;
+}
+.modal-footer .btn-success:hover {
+    background: #2ecc71;
+}
+
+/* OK button styling */
+.pull-right button.btn-primary {
+    background:blue;
+    border-radius: 30px;
+    padding: 12px 35px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
+    border: none;
+    transition: background 0.3s ease;
+}
+.pull-right button.btn-primary:hover {
+    background: #3498db;
+}
+
+/* Float right fixes */
+.pull-right {
+    margin-top: 30px;
+    text-align: right;
+}

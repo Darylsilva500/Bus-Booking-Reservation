@@ -1,0 +1,37 @@
+.bus-table-head {
+    background-color: blue; /* Bootstrap primary color */
+    color: white;
+}
+
+h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;           /* Ensures text aligns to the left */
+    padding-left: 20px;         /* Optional: nudges it slightly from the edge */
+}
+
+form h3 {
+    margin-top: 40px;
+    text-align: center;
+    padding-left: 50px;
+}
+
+h2 span {
+  color: red;
+}
+h3 span {
+  color: red;
+}
+.booking-box {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 80px;
+    margin-top: 50px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
