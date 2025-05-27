@@ -1,0 +1,92 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<style>
+ body, html {
+  height: 100%;
+  margin: 0;
+  background: url('/static/images/header.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+  .neumorphic-form {
+    background: #e0e5ec;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px #a3b1c6, -10px -10px 30px #ffffff;
+    padding: 40px;
+  }
+  .form-control {
+    background: #e0e5ec;
+    border: none;
+    border-radius: 12px;
+    box-shadow: inset 5px 5px 10px #babecc, inset -5px -5px 10px #ffffff;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  .form-control:focus {
+    box-shadow: inset 2px 2px 5px #babecc, inset -2px -2px 5px #ffffff;
+    outline: none;
+  }
+  .btn-success {
+    background: #e0e5ec;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
+    padding: 10px 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  .btn-success:hover {
+    box-shadow: inset 5px 5px 10px #babecc, inset -5px -5px 10px #ffffff;
+  }
+  .eye-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+      <form action="{% url 'signup' %}" method="post" class="neumorphic-form">
+        <h2 class="text-center mb-4">Sign up!</h2>
+        {% csrf_token %}
+        <div class="form-group row">
+          <label for="example-email-input" class="col-2 col-form-label">Email:</label>
+          <div class="col-10">
+            <input name='email' class="form-control" type="text" id="example-email-input" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Username:</label>
+          <div class="col-10">
+            <input name='name' class="form-control" type="text" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Password:</label>
+          <div class="col-10 position-relative">
+            <input name='password' id="password-input" class="form-control" type="password" required>
+            <span onclick="togglePassword()" class="eye-toggle"></span>
+          </div>
+        </div>
+        <div class="text-right">
+          <button type="submit" class="btn btn-success">Sign up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePassword() {
+    const pwd = document.getElementById("password-input");
+    pwd.type = pwd.type === "password" ? "text" : "password";
+  }
+</script>
+{% endblock %}
